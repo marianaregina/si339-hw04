@@ -131,7 +131,7 @@ nav ul li a:focus, nav:hover {
 }
 
 /* Step 3: Write selector/rule property to style all elements when in focus*/
-:focus {
+*:focus {
   border: 2px solid black;
 }
 
@@ -140,15 +140,15 @@ nav ul li a:focus, nav:hover {
 @media only screen and (max-width: 600px) {
   main.container {
     display: grid;
-    grid-template-columns: 1fr 5fr 1fr;
+    grid-template-columns: repeat(1fr 5fr 1fr);
     row-gap: 15px;
   }
 
   /* Step 5: Write selector/rule property to add the background image to the 
   first div in the grid  and place it in the grid. */
-  main.container:first-child {
+  main.container div:first-child {
     grid-column: 1/-1;
-    background-image: url("images/header.jpg");
+    background-image: url("/images/header.jpg");
     background-repeat: no-repeat;
     /* for parallax effect*/
     background-attachment: fixed;
@@ -199,9 +199,11 @@ nav ul li a:focus, nav:hover {
     }
 
   /* Step 10: Write the selector/rule property to update the .container class */
-    main.container {
+    .container {
       display: grid;
-      grid-template-columns: 50px auto 500px auto 50px;
+      grid-template-columns: repeat(50px auto 500px auto 50px);
+      grid-template-rows: repeat(auto);
+      grid-gap: 20px;
     }
 
   /* Steps 11 and 12: Update the grid-column property of the grid's children (where-needed)*/
